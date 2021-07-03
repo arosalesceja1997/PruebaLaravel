@@ -15,7 +15,7 @@ class PruebaController extends Controller
       'success' => true,
       'results' => $response->results,
     ];
-    dd($response_complete);
 
+    return response()->json($response_complete);
   }
 }
