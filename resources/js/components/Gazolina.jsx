@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Maps from "simple-react-google-maps";
 
 const RenderGazolina = () => {
   return (
@@ -67,6 +68,20 @@ const RenderGazolina = () => {
               </tr>
             </tbody>
           </table>
+
+          <div className="row">
+            <div className="col-12">
+              <Maps
+                apiKey={"AIzaSyBTU0HPGDirncPvv3vHI45ayIpff5ZnZSA"}
+                style={{height: "400px", width: "100%"}}
+                zoom={12}
+                center={{
+                  lat: 19.245554776991014,
+                  lng: -103.71573392448778
+                }}
+              />
+            </div>
+          </div>
         </div>
         {/* <div className="col-12 text-center">
         </div> */}
