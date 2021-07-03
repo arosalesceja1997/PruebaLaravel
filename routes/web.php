@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('gazolina');
-});
+Route::get('/', 'PruebaController@getGasoline');
 
 Route::get('/gazolina', 'PruebaController@getGasoline');

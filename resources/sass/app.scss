@@ -6,3 +6,23 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.myHeight{
+  height: 150px !important;
+}
+
+.myHeightTh{
+  height: 50px;
+  line-height: 14px;
+}
+
+.myTable{
+  overflow-y:scroll;
+  height:500px;
+}
+
+table td {
+  // overflow: hidden;
+  // display: inline-block;
+  // white-space: nowrap;
+}
