@@ -16,7 +16,7 @@ class PruebaController extends Controller
       'results' => $response->results,
     ];
 
-    return response()->json($response_complete);
+    return view('gazolina', compact('response_complete'));
   }
 
   public function getGasolinePage(Request $request)

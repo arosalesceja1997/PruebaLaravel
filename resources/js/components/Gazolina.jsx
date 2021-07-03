@@ -10,24 +10,14 @@ const RenderGazolina = () => {
           <form>
             <div className="form-group">
               <label for="est">Estado:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="est"
-              />
+              <input type="text" className="form-control" id="est" />
             </div>
             <div className="form-group">
               <label for="mun">Municipio:</label>
-              <input
-                type="text"
-                className="form-control"
-                id="mun"
-              />
+              <input type="text" className="form-control" id="mun" />
             </div>
             <div className="form-group">
-              <label for="exampleFormControlSelect2">
-                Ordenamiento:
-              </label>
+              <label for="exampleFormControlSelect2">Ordenamiento:</label>
               <select
                 multiple
                 className="form-control"
@@ -42,38 +32,53 @@ const RenderGazolina = () => {
             </div>
           </form>
 
-          <button type="button" class="btn btn-success">Buscar</button>
+          <button type="button" className="btn btn-success">
+            Buscar
+          </button>
         </div>
 
-        <div className="col-12 col-md-8">
+        <div className="col-12 col-md-8 mb-3 myTable">
           <table className="table">
             <thead className="thead-dark">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Direcion</th>
-                <th scope="col">Verde</th>
-                <th scope="col">Roja</th>
-                <th scope="col">Negra</th>
+                <th scope="col">_id</th>
+                <th scope="col">calle</th>
+                <th scope="col">rfc</th>
+                {/* <th scope="col">date_insert</th> */}
+                <th scope="col">regular</th>
+                <th scope="col">premium</th>
+                <th scope="col">dieasel</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>Mark</td>
-                <td>Otto</td>
-              </tr>
+
+              {response.results.map((res, key) => {
+                return (
+                  <tr className="myHeightTh">
+                    <th scope="row">{key}</th>
+                    <td width="50px">{res._id}</td>
+                    <td>{res.calle}</td>
+                    <td>{res.rfc}</td>
+                    {/* <td>{res.date_insert}</td> */}
+                    <td>{res.regular}</td>
+                    <td>{res.premium}</td>
+                    <td>{res.dieasel}</td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
+        </div>
+        {/* <div className="col-12 text-center">
+        </div> */}
+      </div>
 
-          <div className="row">
+      <div className="row mb-3">
             <div className="col-12">
               <Maps
                 apiKey={"AIzaSyBTU0HPGDirncPvv3vHI45ayIpff5ZnZSA"}
-                style={{height: "400px", width: "100%"}}
+                style={{ height: "400px", width: "100%" }}
                 zoom={12}
                 center={{
                   lat: 19.245554776991014,
@@ -82,10 +87,6 @@ const RenderGazolina = () => {
               />
             </div>
           </div>
-        </div>
-        {/* <div className="col-12 text-center">
-        </div> */}
-      </div>
     </div>
   );
 };
